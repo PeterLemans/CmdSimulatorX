@@ -1,0 +1,5 @@
+"COMMAND","OUTPUT","RESULT","ERROR","SYSTEMRC"
+"pwd","/root","","Error occured","12"
+"ls","aconda-ks.cfg  Documents    install.log.syslog  Pictures      Templates
+deedMars         Downloads    marsdump            Public        Videos
+","","","0"
