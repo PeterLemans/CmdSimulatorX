@@ -4,7 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
 import com.nachattar.simulator.commandexecution.loader.YAMLLoaderImpl;
+
 public class ReadYaml {
 
  
@@ -27,7 +29,7 @@ public class ReadYaml {
 	    	
 	    }
 	    System.out.println("Loaded Data ----------------");
-	    	//data.forEach((k,v)->System.out.println( k + ": "+ v));
+	    	data.forEach((k,v)->System.out.println( k + ": "+ v));
 	    	
 	    	String command="df /root |tr -s ' ' |cut -d' ' -f5|tail -n1";
 	    System.out.println("Command provided: " +"df /root |tr -s ' ' |cut -d' ' -f5|tail -n1");
@@ -39,7 +41,7 @@ public class ReadYaml {
 	    out.put("ExecuteKey", ++executeKey);
 	    System.out.println(out.toString());
 	} catch (Exception e) {
-       throw new CommandSimulatorException(e);
+       throw new CommandSimulatorException(e.getMessage(),e);
 	}
 	 
 }
