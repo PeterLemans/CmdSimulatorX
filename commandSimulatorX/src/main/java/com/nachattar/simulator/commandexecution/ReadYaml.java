@@ -27,7 +27,7 @@ public class ReadYaml {
 	    	
 	    }
 	    System.out.println("Loaded Data ----------------");
-	    	data.forEach((k,v)->System.out.println( k + ": "+ v));
+	    	//data.forEach((k,v)->System.out.println( k + ": "+ v));
 	    	
 	    	String command="df /root |tr -s ' ' |cut -d' ' -f5|tail -n1";
 	    System.out.println("Command provided: " +"df /root |tr -s ' ' |cut -d' ' -f5|tail -n1");
