@@ -1,0 +1,33 @@
+Commands:
+- Name: Disk Utilization Linux
+  Description: Simulate High Disk Space Utilization on Linux
+  Command:  df /root |tr -s ' ' |cut -d' ' -f5|tail -n1
+  ExecuteKey: 1
+  SimulationEnabled: true
+  Values:
+    0:
+     Output: 90%
+     Result: 
+     SystemRC: 0
+     Error:
+    1:
+     Output: 40%
+     Result: 
+     Systemrc: 0
+     Error: Sample Error
+- Name: Service Status Linux
+  Description: Simulate Service Stop Start on Linux
+  Command:  service httpd status
+  ExecuteKey: 0
+  SimulationEnabled: true
+  Values:
+    0:
+     Output: httpd is stopped
+     Result: 
+     SystemRC: 3
+     Error:
+    1:
+     Output: httpd (pid  2166) is running...
+     Result: 
+     Systemrc: 0
+     Error: 

@@ -55,7 +55,7 @@ public class App {
 
 		} catch (ParseException e) {
 			log.debug(e.getMessage());
-			formatter.printHelp("Command Simulation Test Harness", options);
+			formatter.printHelp("Command Simulator X", options);
          	System.exit(1);
 			return;
 		}
@@ -69,16 +69,20 @@ public class App {
 		
 
 		// get the command output
-		
+		if (out!=null) {
 		Map<String, String> output = out.get(command);
+		
+		if(output!=null) {
 		System.out.println(output.get("OUTPUT"));
 		log.info("Command Simulator Finished.");
 		if(output.get("ERROR")!=null&&!output.get("ERROR").isEmpty())
 			System.err.println(output.get("ERROR"));
 		System.exit(Integer.parseInt(output.get("SYSTEMRC")));
-
+		}
+		else 
+			log.error("Unable to read file");
 		
-
+		}
 	}
 
 }
