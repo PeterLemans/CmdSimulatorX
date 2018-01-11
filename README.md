@@ -17,6 +17,7 @@ Output:
 /root
 
 # File contains the key(command) and other parameters.
+```
 df /root |tr -s ' ' |cut -d' ' -f5|tail -n1:
   Name: Disk Utilization Linux
   Description: Simulate High Disk Space Utilization on Linux
@@ -35,4 +36,4 @@ service httpd status:
   Values:
     0: {Output: httpd is stopped, Result: null, SystemRC: 3, Error: null}
     1: {Output: httpd (pid  2166) is running..., Result: null, SystemRC: 0, Error: null}
-
+```
