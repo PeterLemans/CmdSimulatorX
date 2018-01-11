@@ -19,8 +19,8 @@ public class App {
 
 	private static Logger log = Logger.getLogger(App.class);
 
-	public static void main(String[] args) throws YAMLWriterException, YAMLLoaderException {
-		log.info("Command Simulator Starting ...");
+	public static void main(String[] args) throws YAMLWriterException, YAMLLoaderException, CommandSimulatorException {
+		log.info("Command Simulation Started ....");
 
 		// read the command line arguments
 	
@@ -42,7 +42,7 @@ public class App {
 		Console console = System.console();
 		if (console == null) {
 			log.error("Couldn't get Console instance");
-			// System.exit(1);
+			// throw new CommandSimulatorException("Couldn't get Console instance");
 		}
 
 		try {
@@ -57,7 +57,7 @@ public class App {
 			}
 
 		} catch (ParseException e) {
-			log.debug(e.getMessage());
+			log.error(e.getMessage());
 			formatter.printHelp("Command Simulator X", options);
          	System.exit(1);
 			return;
@@ -65,6 +65,7 @@ public class App {
 
 		CommandExecutionX simulatorX = new CommandExecutionX();
 		simulatorX.startSimulatorX(command, file);
+		
 	}
 
 }

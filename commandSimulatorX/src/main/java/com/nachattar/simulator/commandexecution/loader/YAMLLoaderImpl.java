@@ -29,13 +29,13 @@ public class YAMLLoaderImpl implements YAMLLoader {
 		Map<String, Object> map;
 		try {
 			map = (Map<String, Object>) yaml.load(new FileInputStream(new File(yamlFile)));
+			log.debug("Command File Content: \n"+ yaml.dump(map));
 		} catch (Exception e) {
 		   throw new YAMLLoaderException(e.getMessage(),e.getCause());
 			
 		}
 
 		JSONObject jsonObject = new JSONObject(map);
-		log.info("Loader Successfully loaded the YAML file into JSONObject");
 		return jsonObject;
 	}
 
@@ -47,6 +47,7 @@ public class YAMLLoaderImpl implements YAMLLoader {
 		Map<String, Object> map;
 		try {
 			map = (Map<String, Object>) yaml.load(new FileInputStream(new File(yamlFile)));
+			log.debug("Command File Content: \n"+ yaml.dump(map));
 		} catch (Exception e) {
 		   throw new YAMLLoaderException(e.getMessage(),e.getCause());
 			

@@ -18,7 +18,7 @@ import com.nachattar.simulator.commandexecution.writer.YAMLWriterImpl;
 
 public class Test {
 @SuppressWarnings("unchecked")
-public static void main(String[] args) throws YAMLWriterException, YAMLLoaderException {
+/*public static void main(String[] args) throws YAMLWriterException, YAMLLoaderException {
 	
 	  //commmand input
     	String command="df /root |tr -s ' ' |cut -d' ' -f5|tail -n1";
@@ -60,7 +60,8 @@ public static void main(String[] args) throws YAMLWriterException, YAMLLoaderExc
 	    System.out.println("Finala output ...................................");
 	    processCommand(bo);
 	    
-}
+}*/
+
 
 private static void processCommand(CommandOutputBO bo) {
 	if(bo.getError()!=null)

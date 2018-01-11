@@ -18,10 +18,10 @@ public class YAMLWriterImpl implements YAMLWriter {
      */
 	@Override
 	public boolean dumpYaml(Map<String, Object> map, String yamlFile) throws YAMLWriterException {
-		log.debug("YAML Writer Starting ...");
 		Yaml yaml = new Yaml();
 		try {
 			yaml.dump(map, new PrintWriter(new File(yamlFile)));
+			log.debug("Command File Content: \n"+ yaml.dump(map));
 		} catch (FileNotFoundException e) {
 			log.error(e);
 			throw new YAMLWriterException(e.getMessage(), e);
