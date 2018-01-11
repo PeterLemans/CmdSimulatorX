@@ -42,6 +42,7 @@
 				<directory>${basedir}/src/main/resources</directory>
 				<includes>
 					<include>ExecuteCommand.yaml</include>
+					<include>log4j.properties</include>
 				</includes>
 			</resource>
 		</resources>
