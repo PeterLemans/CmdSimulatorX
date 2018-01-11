@@ -1,8 +1,9 @@
-Commands:
-- Name: Disk Utilization Linux
+# Disk Utilization Linux
+"df /root |tr -s ' ' |cut -d' ' -f5|tail -n1":
+  Name: Disk Utilization Linux
   Description: Simulate High Disk Space Utilization on Linux
   Command:  df /root |tr -s ' ' |cut -d' ' -f5|tail -n1
-  ExecuteKey: 1
+  ExecuteKey: 0
   SimulationEnabled: true
   Values:
     0:
@@ -15,7 +16,9 @@ Commands:
      Result: 
      Systemrc: 0
      Error: Sample Error
-- Name: Service Status Linux
+# Service Status Linux     
+service httpd status: 
+  Name: Service Status Linux
   Description: Simulate Service Stop Start on Linux
   Command:  service httpd status
   ExecuteKey: 0

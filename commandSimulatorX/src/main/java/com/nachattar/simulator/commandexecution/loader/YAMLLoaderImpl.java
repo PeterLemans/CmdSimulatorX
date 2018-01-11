@@ -9,7 +9,7 @@ import org.json.JSONObject;
 import org.yaml.snakeyaml.Yaml;
 
 /**
- * The class <code>YAMLLoaderImpl</code> defines the implementation forfor reading command execution yaml files and creating an in memory database of commands with multiple states
+ * The class <code>YAMLLoaderImpl</code> defines the implementation for reading command execution yaml files and creating an in memory database of commands with multiple states
  *
  * @author  Deed Singh (deedsing)
  * @version %I%, %G%
@@ -29,7 +29,7 @@ public class YAMLLoaderImpl implements YAMLLoader {
 		Map<String, Object> map;
 		try {
 			map = (Map<String, Object>) yaml.load(new FileInputStream(new File(yamlFile)));
-		} catch (FileNotFoundException e) {
+		} catch (Exception e) {
 		   throw new YAMLLoaderException(e.getMessage(),e.getCause());
 			
 		}
@@ -37,6 +37,22 @@ public class YAMLLoaderImpl implements YAMLLoader {
 		JSONObject jsonObject = new JSONObject(map);
 		log.info("Loader Successfully loaded the YAML file into JSONObject");
 		return jsonObject;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public Map<String, Object> getMapFromYaml(String yamlFile) throws YAMLLoaderException {
+		Yaml yaml = new Yaml();
+
+		Map<String, Object> map;
+		try {
+			map = (Map<String, Object>) yaml.load(new FileInputStream(new File(yamlFile)));
+		} catch (Exception e) {
+		   throw new YAMLLoaderException(e.getMessage(),e.getCause());
+			
+		}
+		
+		return map;
 	}
 
 }

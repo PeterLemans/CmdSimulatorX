@@ -12,20 +12,23 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.log4j.Logger;
 
+import com.nachattar.simulator.commandexecution.loader.YAMLLoaderException;
+import com.nachattar.simulator.commandexecution.writer.YAMLWriterException;
+
 public class App {
 
 	private static Logger log = Logger.getLogger(App.class);
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws YAMLWriterException, YAMLLoaderException {
 		log.info("Command Simulator Starting ...");
 
 		// read the command line arguments
-
+	
 		String command = "";
 		String file = "";
 		
 		Options options = new Options();
-		Option csvFile = new Option("f", "csvFile", true, "csvFile");
+		Option csvFile = new Option("f", "yamlFile", true, "yamlFile");
 		csvFile.setRequired(true);
 		options.addOption(csvFile);
 
@@ -60,29 +63,8 @@ public class App {
 			return;
 		}
 
-		//read the csv file
-		ReadCSV csv = new ReadCSV();
-		Map<String, Map<String, String>> out = csv.readCSV(file);
-		log.info("Command: "+command);
-		log.info("File: "+file);
-		log.info("File load complete.");
-		
-
-		// get the command output
-		if (out!=null) {
-		Map<String, String> output = out.get(command);
-		
-		if(output!=null) {
-		System.out.println(output.get("OUTPUT"));
-		log.info("Command Simulator Finished.");
-		if(output.get("ERROR")!=null&&!output.get("ERROR").isEmpty())
-			System.err.println(output.get("ERROR"));
-		System.exit(Integer.parseInt(output.get("SYSTEMRC")));
-		}
-		else 
-			log.error("Unable to read file");
-		
-		}
+		CommandExecutionX simulatorX = new CommandExecutionX();
+		simulatorX.startSimulatorX(command, file);
 	}
 
 }

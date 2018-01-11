@@ -1,5 +1,7 @@
 package com.nachattar.simulator.commandexecution.loader;
 
+import java.util.Map;
+
 import org.json.JSONObject;
 
 /**
@@ -15,12 +17,22 @@ public interface YAMLLoader {
     * Returns <tt>JSONObject</tt> which contains list of commands that is to be used for simulation
     * @param yamlFile
     *        yaml file which is to be processed
-    * @param nodeToExtract
-    *        Xml element/node from where the data needs to be extracted
     * @return JSONObject
     *          Returns <tt>JSONObject</tt> which contains list of commands that is to be used for simulation
-    * @throws XmlParserException
-    *         If any exception occurs when the xml file is porcessed for data
+    * @throws YAMLLoaderException
+    *         If any exception occurs when loading/reading the yaml file
     */
 	public JSONObject getJSONFromYaml(String yamlFile) throws YAMLLoaderException ;
+	
+	 /**
+    *
+    * Returns <tt>Map<String,Object></tt> which contains map of commands that is to be used for simulation
+    * @param yamlFile
+    *        yaml file which is to be processed
+    * @return Map<String,Object>
+    *          Returns <tt>Map<String,Object></tt> which contains map of commands that is to be used for simulation
+    * @throws YAMLLoaderException
+    *         If any exception occurs when loading/reading the yaml file
+    */
+	public Map<String,Object> getMapFromYaml(String yamlFile) throws YAMLLoaderException ;
 }
