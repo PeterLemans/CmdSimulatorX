@@ -3,9 +3,9 @@
 This project is used to simulate command execution.
 
 CmdSimulatorX offers a few key features:  
-- This tool can be used as a test harness to simulate command execution (mock command execution) 
-- This tool can help to test automation tool/orchestrator mimic command execution on the target servers   
-- Each command can have multiple ouput options with system error codes. Very usefull for doing complete success and error flow testing
+- This tool can be used as a test harness to simulate command execution (mock command execution).
+- This tool can help to test automation tool/orchestrator mimic command execution on the target servers.
+- Each command can have multiple output options with system error codes. Very useful for doing complete success and error flow testing.
 
 ## Maven Installation
 Run mvn clean install
