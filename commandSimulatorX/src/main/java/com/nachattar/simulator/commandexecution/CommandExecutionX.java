@@ -41,7 +41,7 @@ public class CommandExecutionX {
 	   	    log.debug("Available Values: \n"+values.toString());
 	   	    log.debug("Selected Value based on ExecuteKey: \n"+value.toString());
 	   	    log.debug("Creating CommandOutputBO ...");
-	   	    bo = new CommandOutputBO((String)value.get("Output"), (Integer)value.get("SystemRC"), (String)value.get("Result"), (String)value.get("Error"));
+	   	    bo = new CommandOutputBO(value.get("Output"), (Integer)value.get("SystemRC"), (String)value.get("Result"), (String)value.get("Error"));
 	 
 	   	    log.debug("CommandOutputBO --> "+bo.toString());
 	   	    if(executeKey<(values.size()-1))

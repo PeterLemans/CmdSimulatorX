@@ -2,11 +2,11 @@ package com.nachattar.simulator.commandexecution;
 
 public class CommandOutputBO {
 
-	private String output;
+	private Object output;
 	private Integer systemRC;
 	private String result;
 	private String error;
-	public String getOutput() {
+	public Object getOutput() {
 		return output;
 	}
 	public void setOutput(String output) {
@@ -30,7 +30,7 @@ public class CommandOutputBO {
 	public void setError(String error) {
 		this.error = error;
 	}
-	public CommandOutputBO(String output, Integer systemRC, String result, String error) {
+	public CommandOutputBO(Object output, Integer systemRC, String result, String error) {
 		super();
 		this.output = output;
 		this.systemRC = systemRC;

@@ -16,3 +16,12 @@ service httpd status:
   Values:
     0: {Output: httpd is stopped, Result: null, SystemRC: 3, Error: null}
     1: {Output: httpd (pid  2166) is running... 1, Result: null, SystemRC: 0, Error: null}
+aix_CheckFreePPDiskSpace:
+  Name: Run Healix Solution name aix_CheckFreePPDiskSpace
+  Description: Simulate Healix Solution name aix_CheckFreePPDiskSpace
+  Command: aix_CheckFreePPDiskSpace
+  ExecuteKey: 0
+  SimulationEnabled: true
+  Values:
+    0: {Output:  68975, Result: null, SystemRC: 0, Error: null}
+    

@@ -40,7 +40,6 @@ public class YAMLLoaderImpl implements YAMLLoader {
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public Map<String, Object> getMapFromYaml(String yamlFile) throws YAMLLoaderException {
 		Yaml yaml = new Yaml();
 
